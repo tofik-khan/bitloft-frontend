@@ -6,6 +6,7 @@ import {
   Drawer,
   AppBar as MUIAppBar,
   Toolbar,
+  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
@@ -44,10 +45,23 @@ export const AppBar = () => {
               }}
             >
               <Box
-                sx={{ "&:hover": { cursor: "pointer" } }}
+                sx={{
+                  "&:hover": { cursor: "pointer" },
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                }}
                 onClick={() => navigate("/")}
               >
-                Logo
+                <img src="/public/images/Logo.png" width={50} />
+                <Typography
+                  variant="h2"
+                  component={"span"}
+                  fontSize={"24px"}
+                  color="primary"
+                >
+                  BitLoft LLC
+                </Typography>
               </Box>
               <Box
                 sx={{

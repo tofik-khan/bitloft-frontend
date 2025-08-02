@@ -7,8 +7,12 @@ export const theme = createTheme({
     h2: {
       fontFamily: `Lato`,
       fontWeight: "bold",
-      fontSize: "56px",
+      fontSize: "48px",
       marginBottom: "8px",
+    },
+    body1: {
+      fontFamily: "Barlow",
+      fontSize: "20px",
     },
   },
 });

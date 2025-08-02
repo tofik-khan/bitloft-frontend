@@ -1,5 +1,5 @@
 import { PublicLayout } from "@/components/layouts/public";
-import { Typography } from "@mui/material";
+import { HomePage } from "@/pages/home";
 import { Route, Routes } from "react-router";
 
 export const AppRoutes = () => {
@@ -7,14 +7,7 @@ export const AppRoutes = () => {
     <>
       <Routes>
         <Route path="/" element={<PublicLayout />}>
-          <Route
-            path="/"
-            element={
-              <Typography variant="h2" color="primary">
-                Homepage
-              </Typography>
-            }
-          />
+          <Route path="/" element={<HomePage />} />
         </Route>
       </Routes>
     </>
