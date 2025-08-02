@@ -7,7 +7,6 @@ import {
   AppBar as MUIAppBar,
   Toolbar,
 } from "@mui/material";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
 import { useNavigate } from "react-router";
@@ -15,12 +14,6 @@ import { useNavigate } from "react-router";
 export const AppBar = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-
-  const AdminSection = () => (
-    <Button onClick={() => console.log("Admin")}>
-      <PersonOutlineIcon /> Admin
-    </Button>
-  );
 
   const NavItems = () => (
     <>
@@ -33,7 +26,11 @@ export const AppBar = () => {
       <MUIAppBar
         component="nav"
         position="sticky"
-        sx={{ borderRadius: "4px", backgroundColor: "white" }}
+        sx={{
+          borderRadius: "4px",
+          backgroundColor: "white",
+          boxShadow: "none",
+        }}
       >
         {/** Desktop NavBar */}
         <Container maxWidth="xl" sx={{ display: { md: "block", xs: "none" } }}>
@@ -61,15 +58,6 @@ export const AppBar = () => {
                 }}
               >
                 <NavItems />
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  alignContent: "center",
-                }}
-              >
-                <AdminSection />
               </Box>
             </Box>
           </Toolbar>
@@ -120,17 +108,6 @@ export const AppBar = () => {
           }}
         >
           <NavItems />
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: 50,
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-          }}
-        >
-          <AdminSection />
         </Box>
       </Drawer>
     </>
