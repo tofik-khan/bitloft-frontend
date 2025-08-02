@@ -5,9 +5,9 @@ export const theme = createTheme({
   palette: colors,
   typography: {
     h2: {
-      fontFamily: "Fraunces,Georgia,Times,serif",
+      fontFamily: `Lato`,
       fontWeight: "bold",
-      fontSize: "24px",
+      fontSize: "56px",
       marginBottom: "8px",
     },
   },

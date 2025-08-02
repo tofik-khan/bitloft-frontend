@@ -9,7 +9,11 @@ export const AppRoutes = () => {
         <Route path="/" element={<PublicLayout />}>
           <Route
             path="/"
-            element={<Typography variant="h2">Homepage</Typography>}
+            element={
+              <Typography variant="h2" color="primary">
+                Homepage
+              </Typography>
+            }
           />
         </Route>
       </Routes>
