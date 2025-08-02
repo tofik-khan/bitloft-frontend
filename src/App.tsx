@@ -1,7 +1,10 @@
+import { AppRoutes } from "@/routes/appRoutes";
+
 export const App = () => {
   return (
     <>
-      <h1>BitLoft</h1>
+      <title>BitLoft | Homepage</title>
+      <AppRoutes />
     </>
   );
 };
