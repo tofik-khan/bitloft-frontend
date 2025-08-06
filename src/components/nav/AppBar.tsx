@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -14,6 +14,7 @@ import { useNavigate } from "react-router";
 
 export const AppBar = () => {
   const [open, setOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const navigate = useNavigate();
 
   const NavItems = () => (
@@ -22,6 +23,22 @@ export const AppBar = () => {
     </>
   );
 
+  const handleScroll = () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    setScrollProgress(scrolled);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <MUIAppBar
@@ -29,8 +46,10 @@ export const AppBar = () => {
         position="sticky"
         sx={{
           borderRadius: "4px",
-          backgroundColor: "white",
-          boxShadow: "none",
+          background: `rgba(255, 255, 255, 0)`,
+          boxShadow:
+            scrollProgress > 5 ? `0 4px 30px rgba(0, 0, 0, 0.1)` : "none",
+          backdropFilter: `blur(10px)`,
         }}
       >
         {/** Desktop NavBar */}
