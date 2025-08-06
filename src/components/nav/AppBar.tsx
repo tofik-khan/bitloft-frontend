@@ -53,7 +53,7 @@ export const AppBar = () => {
                 }}
                 onClick={() => navigate("/")}
               >
-                <img src="/public/images/Logo.png" width={50} />
+                <img src="/images/Logo.png" width={50} />
                 <Typography
                   variant="h2"
                   component={"span"}
