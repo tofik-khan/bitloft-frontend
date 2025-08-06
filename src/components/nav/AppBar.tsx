@@ -50,6 +50,7 @@ export const AppBar = () => {
           boxShadow:
             scrollProgress > 5 ? `0 4px 30px rgba(0, 0, 0, 0.1)` : "none",
           backdropFilter: `blur(10px)`,
+          top: "4px",
         }}
       >
         {/** Desktop NavBar */}
