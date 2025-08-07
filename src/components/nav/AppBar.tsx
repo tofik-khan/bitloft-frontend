@@ -107,7 +107,25 @@ export const AppBar = () => {
                 width: "100%",
               }}
             >
-              <Box>Logo</Box>
+              <Box
+                sx={{
+                  "&:hover": { cursor: "pointer" },
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                }}
+                onClick={() => navigate("/")}
+              >
+                <img src="/images/Logo.png" width={50} />
+                <Typography
+                  variant="h2"
+                  component={"span"}
+                  fontSize={"24px"}
+                  color="primary"
+                >
+                  BitLoft LLC
+                </Typography>
+              </Box>
               <Box
                 sx={{
                   display: "flex",
