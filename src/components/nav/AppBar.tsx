@@ -17,9 +17,17 @@ export const AppBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const navigate = useNavigate();
 
+  const scrollToContact = () => {
+    const element = document.getElementById("contact-form");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const NavItems = () => (
     <>
-      <Button>Links</Button>
+      {/* <Button>Our Services</Button> */}
+      <Button variant="contained" onClick={scrollToContact}>
+        Get in Touch
+      </Button>
     </>
   );
 

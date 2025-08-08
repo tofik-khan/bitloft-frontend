@@ -13,6 +13,11 @@ import {
 } from "@mui/material";
 
 export const HomePage = () => {
+  const scrollToDiv = (id: string): void => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -42,8 +47,18 @@ export const HomePage = () => {
             gap={2}
             justifyContent={{ xs: "center", md: "left" }}
           >
-            <Button variant="contained">Learn More</Button>
-            <Button variant="outlined">Let's Discuss</Button>
+            <Button
+              variant="contained"
+              onClick={() => scrollToDiv("our-craft")}
+            >
+              Learn More
+            </Button>
+            <Button
+              variant="outlined"
+              onClick={() => scrollToDiv("contact-form")}
+            >
+              Let's Discuss
+            </Button>
           </Stack>
         </Box>
         <Box>
@@ -83,7 +98,7 @@ export const HomePage = () => {
           mx: "auto",
         }}
       >
-        <Box maxWidth={{ xs: "100%", md: "50%" }}>
+        <Box maxWidth={{ xs: "100%", md: "50%" }} id="our-craft">
           <Typography variant="h2" color="primary">
             Our Craft, Your Advantage
           </Typography>
@@ -156,7 +171,7 @@ export const HomePage = () => {
           mx: "auto",
         }}
       >
-        <Box maxWidth={"300px"}>
+        <Box maxWidth={"300px"} id="contact-form">
           <Typography variant="h2" color="primary">
             Let&apos;s Get In Touch!
           </Typography>
